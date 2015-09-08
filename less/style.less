@@ -1,0 +1,579 @@
+@import url('variable.less');
+
+@font: @font-weight @font-size/@text-line @font-style;
+
+@font-basic: {
+    font: inherit;
+};
+
+
+@size-p: ~"(min-width: 580px) and (max-width: 780px)";
+
+
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font: @font;
+    color: @color-blue;
+    min-width: 320px;
+    line-height: @text-line;
+    @media @size-p {
+        min-width: 700
+    }
+
+}
+
+.container() {
+    margin-right: auto;
+    margin-left: auto;
+    width: auto;
+    padding: 0px 20px;
+    @media @size-p {
+        margin-right: auto;
+        margin-left: auto;
+        width: auto;
+        padding: 0px 40px;
+    }
+    }
+
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.list-style() {
+    list-style: none;
+}
+
+.list-style-li() {
+    font: @font;
+    color: @color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.pad-marg-reset() {
+    margin: 0;
+    padding: 0;
+}
+
+.column-left() {
+    float: left;
+}
+
+.colum-right() {
+    float: right
+}
+
+.header-page {
+    color: @color-white;
+    background-color: @color-blue;
+    background-image: url('../img/header-phone-logo.png'), url('../img/header-bg.png');
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 313px, auto 486px;
+    background-position: 0 173px, 50% 0;
+    @media @size-p  {
+        background-image: url('../img/header-phone-logo700.png'), url('../img/header-bg700.png');
+        background-repeat: no-repeat, no-repeat;
+        background-size:  auto, auto;
+        background-position: 100% 183px, 0 0;
+        padding-bottom: 50px;
+    }
+    
+}
+
+.nav-page {
+    padding-top: 20px;
+    padding-bottom: 46px;
+    margin-bottom: 22px;
+    background: rgba(29, 38, 49, .3);
+    position: relative;
+    @media @size-p {
+        padding-top: 27px;
+        padding-bottom: 80px;
+        margin-bottom: 100px;
+    }
+    &__inner {
+        .container();
+    }
+    &__menu-list {
+        position: absolute;
+        width: 320px;
+        top: 66px;
+        left: 0;
+        font: @font;
+        color: @color-white;
+        background: @color-blue;
+        .list-style();
+        .pad-marg-reset();
+        display: none;
+    }
+    &__list-li,
+    &__list-li--active {
+        height: 23px;
+        width: 320px;
+        .list-style-li();
+        display: inline-block;
+        box-shadow: 0 1px 0 black, inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        text-align: center;
+        vertical-align: middle;
+        padding: 20px 0;
+        font-size: @font-size--h3;
+        font-weight: @font-weight--h3;
+    }
+    &__logo {
+        .pad-marg-reset();
+        font-weight: @font-weight--h1;
+        font-size: @font-size--h1;
+        .column-left();
+        @media @size-p {
+            font-weight: @font-weight--h2;
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 59px;
+                height: 40px;
+                background: url(../img/glasses.png) no-repeat;
+            }
+        }
+    }
+    &__menu-btn {
+        .colum-right();
+        width: 50px;
+        height: 4px;
+        position: relative;
+        border: none;
+        outline: none;
+        background: @color-white;
+        @media @size-p{
+            top:20px;
+        }
+        &::after,
+        &::before {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 4px;
+            position: absolute;
+            background: @color-white;
+        }
+        &::after {
+            top: 10px;
+            right: 0;
+        }
+        &::before {
+            top: 20px;
+            right: 0;
+        }
+    }
+}
+
+.title-page {
+
+    &__inner {
+        .container();
+    }
+    &__slogan {
+        .pad-marg-reset();
+        font-weight: @font-weight--h2;
+        font-size: @font-size--h2;
+        text-align: center;
+        margin-bottom: 366px;
+        @media @size-p{
+            font-size: 40px;
+            margin-bottom: 27px;
+            display: inline-block;
+            width: 190px;
+            margin-right: 200px;
+            margin-left: 55px;
+            line-height: 45px;
+        
+        }
+    }
+    &__btn {
+        display: block;
+        border: 3px solid @color-white;
+        outline: none;
+        background: none;
+        width: 280px;
+        height: 55px;
+        font: @font;
+        color: @color-white;
+        border-radius: 30px;
+        font-size: @font-size--h3;
+        font-weight: 600;
+        margin-bottom: 27px;
+        margin-left: auto;
+        margin-right: auto;
+        @media @size-p{
+            display: inline-block;
+        }
+        
+        
+    }
+}
+
+.title-fotter {
+    text-align: center;
+    &__list-apps {
+        margin: 0 auto;
+        padding: 0;
+        margin-bottom: 27px;
+        width: auto;
+        @media @size-p{
+            text-align: left;
+        }
+      
+
+    }
+    &__li-apps {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        margin-right: 35px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__inner {
+        .container();
+
+       
+    }
+    &__app-descriptions {
+        .pad-marg-reset();
+        font: @font;
+        color: @color-white;
+        text-align: center;
+        padding-bottom: 30px;
+        margin-bottom: 35px;
+        @media @size-p{
+            text-align: left;
+        display: inline-block;
+        width: 287px;
+        }
+    }
+}
+
+.content-page {
+background: @color-grey;
+}
+
+.content-header {
+background: @color-white;
+    &__inner {
+        .container();
+    }
+    &__title1 {
+        font-size: @font-size--h2;
+        font-weight: @font-weight--h2;
+        text-align: center;
+        .pad-marg-reset();
+        margin-bottom: 35px;
+        @media @size-p {
+            font-size: 40px; 
+            margin-top: 50px;
+         
+        }
+        
+    }
+    &__title2 {
+        font-size: @font-size--h2;
+        font-weight: @font-weight--h2;
+        text-align: center;
+        .pad-marg-reset();
+        margin-bottom: 115px;
+        @media @size-p {
+            font-size: 40px; 
+        }
+    }
+}
+
+.content-section {
+background: @color-grey;
+
+    &__inner {
+        .container();
+        @media @size-p{
+            text-align: left;
+            float: left;
+            margin: 0;
+            background: @color-grey;
+        }
+    }
+    &__article-1 {
+
+
+        h3 {
+            font-size: @font-weight--h3;
+            font-weight: @font-weight--h3;
+            text-align: center;
+            line-height: @text-line--heading;
+            .pad-marg-reset();
+            @media @size-p{
+                text-align: left;
+
+            }
+
+        }
+        p {
+            text-align: center;
+            margin-bottom: 35px;
+            @media @size-p{
+                text-align: left;
+
+            }
+        }
+    }
+    &__article-2 {
+        h3 {
+            font-size: @font-weight--h3;
+            font-weight: @font-weight--h3;
+            line-height: @text-line--heading;
+            .pad-marg-reset();
+            text-align: center;
+            @media @size-p{
+                text-align: left;
+
+            }
+
+        }
+        p {
+            text-align: center;
+            margin-bottom: 35px;
+            @media @size-p{
+                text-align: left;
+
+            }
+
+        }
+    }
+    &__article-3 {
+        h3 {
+            font-size: @font-weight--h3;
+            font-weight: @font-weight--h3;
+            line-height: @text-line--heading;
+            .pad-marg-reset();
+            text-align: center;
+            @media @size-p{
+                text-align: left;
+
+            }
+
+        }
+        p {
+            text-align: center;
+            @media @size-p{
+                text-align: left;
+
+            }
+
+        }
+    }
+    &__phone-image {
+        
+        width: 160px;
+        height: 278px;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-top: 27px;
+        background: @color-grey;
+        margin-bottom: 27px;
+        @media @size-p{
+            display: none;
+
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+    }
+        &__phone-imagep {
+
+
+            margin: 0 auto;
+          
+            background: @color-grey;
+            margin-top: -70px;
+            display: none;
+            
+            @media @size-p{
+              display: block;
+                float: left;
+                margin-right: 20px;
+
+            }
+
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+    }
+}
+
+.slider-review-page {
+    padding-bottom: 135px;
+    background: @color-white;
+
+    &__inner {
+        .container();
+    }
+    &__section {
+        h2 {
+            font-size: @font-weight--h2;
+            font-weight: 700;
+            text-align: center;
+            line-height: @text-line--heading;
+            .pad-marg-reset();
+            margin-bottom: 23px;
+        }
+        p {
+            text-align: center;
+        }
+    }
+    &__controls {
+        margin-left: 103px;
+        margin-right: 103px;
+        text-align: center;
+        &-btn {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: darken(@color-grey, 20%);
+            text-align: center;
+            vertical-align: middle;
+            margin-right: 20px;
+            border-radius: 50%;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        &-btn--active {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: @color-white;
+            text-align: center;
+            vertical-align: middle;
+            margin-right: 20px;
+            border: @color-blue 3px solid;
+            border-radius: 50%;
+        }
+    }
+}
+
+.price-page {
+    overflow: hidden;
+    margin-bottom: 40px;
+    background: @color-grey;
+    &__inner {
+        .container();
+    }
+    &__table {
+        width: 828px;
+        border-collapse: collapse;
+        margin-left: -250px;
+        th {
+            background: @color-blue;
+            border: 2px solid @color-grey;
+            width: 276px;
+            height: 94px;
+            color: @color-white;
+            text-transform: uppercase;
+        }
+        td {
+            background: @color-white;
+            border: 2px solid @color-grey;
+            width: 276px;
+            height: 59px;
+            text-transform: uppercase;
+            padding-left: 20px;
+            background-image: url('../img/price-table-ok.png');
+            background-repeat: no-repeat;
+            background-position: 220px 50%;
+        }
+    }
+    &__controls {
+        text-align: center;
+        padding: 40px 0;
+        margin-left: 103px;
+        margin-right: 103px;
+        &-btn,
+        &-btn--active {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: darken(@color-grey, 20%);
+            text-align: center;
+            vertical-align: middle;
+            margin-right: 20px;
+            border-radius: 50%;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        &-btn--active {
+            background: @color-white;
+            border: @color-blue 3px solid;
+            border-radius: 50%;
+        }
+    }
+}
+
+.contact-page {
+    &__inner {
+        .container();
+    }
+}
+
+.contact-info {
+    position: relative;
+    &__slogan {
+        font-size: @font-weight--h2;
+        font-weight: @font-weight--h2;
+        text-align: center;
+        .pad-marg-reset();
+        margin-bottom: 20px;
+    }
+    &__phone,
+    &__mail,
+    &__adress {
+        margin-bottom: 27px;
+        h2 {
+            color: @color-pink;
+            text-align: center;
+            .pad-marg-reset();
+            font-size: 24px;
+            font-weight: @font-weight--h2;
+        }
+        h3 {
+            text-align: center;
+            .pad-marg-reset();
+            line-height: @text-line--heading;
+            margin-bottom: 10px;
+        }
+    }
+    &__map {
+        width: 100%;
+        height: 200px;
+        background: @color-white;
+        background-image: url('../img/contact-map.jpg');
+        background-repeat: no-repeat;
+        background-size:  cover;
+        background-position: bottom;
+
+    }
+}
