@@ -7,7 +7,7 @@
 };
 
 
-@size-p: ~"(min-width: 580px) and (max-width: 780px)";
+@size-p: ~"(min-width: 680px) and (max-width: 960px)";
 
 
 
@@ -79,9 +79,9 @@ body {
     background-image: url('../img/header-phone-logo.png'), url('../img/header-bg.png');
     background-repeat: no-repeat, no-repeat;
     background-size: auto 313px, auto 486px;
-    background-position: 0 173px, 50% 0;
+    background-position: 50% 173px, 50% 0;
     @media @size-p  {
-        background-image: url('../img/header-phone-logo700.png'), url('../img/header-bg700.png');
+        background-image: url('../img/header-phone-logo700.png'), url('../img/header-bg700.jpg');
         background-repeat: no-repeat, no-repeat;
         background-size:  auto, auto;
         background-position: 100% 183px, 0 0;
@@ -389,6 +389,7 @@ background: @color-grey;
         margin-bottom: 27px;
         @media @size-p{
             display: none;
+            
 
         }
 
@@ -412,6 +413,7 @@ background: @color-grey;
               display: block;
                 float: left;
                 margin-right: 20px;
+                margin-bottom: 0px;
 
             }
 
